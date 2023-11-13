@@ -1,0 +1,15 @@
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.csproj.AssemblyReference.cache
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course_work.Form1.resources
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course_work.Properties.Resources.resources
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.csproj.GenerateResource.cache
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.csproj.CoreCompileInputs.cache
+E:\Project VS\C#\course work\course work\course work\bin\Debug\course work.exe.config
+E:\Project VS\C#\course work\course work\course work\bin\Debug\course work.exe
+E:\Project VS\C#\course work\course work\course work\bin\Debug\course work.pdb
+E:\Project VS\C#\course work\course work\course work\bin\Debug\EntityFramework.dll
+E:\Project VS\C#\course work\course work\course work\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project VS\C#\course work\course work\course work\bin\Debug\EntityFramework.xml
+E:\Project VS\C#\course work\course work\course work\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.csproj.CopyComplete
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.exe
+E:\Project VS\C#\course work\course work\course work\obj\Debug\course work.pdb
