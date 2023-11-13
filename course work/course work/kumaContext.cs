@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Reflection.Emit;
 
 namespace course_work
 {
@@ -11,12 +12,19 @@ namespace course_work
     {
         public hentuhoContext() : base("hentuhoConn")
         {
-            //Database.SetInitializer<hentuhoContext>(new CreateDatabaseIfNotExists<hentuhoContext>());
+
         }
 
-        public DbSet<Groups> Groups { get; set; }
-        public DbSet<Students> Students { get; set; }
-        public DbSet<GroupStudents> GroupStudents { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<GroupStudent> GroupStudents { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // Определите здесь настройки модели, если это необходимо
+        }
+
         //public DbSet<Grades> Grades { get; set; }
         //public DbSet<Subjects> Subjects { get; set; }
         //public DbSet<Teachers> Teachers { get; set; }

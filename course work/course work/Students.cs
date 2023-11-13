@@ -1,22 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace course_work
 {
-    internal class Students
+    internal class Student
     {
+        [Key]
         public int Id { get; set; }
-        public int GroupId { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string Surname { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string Patronymic { get; set; }
 
-        public virtual ICollection<GroupStudents> GroupStudents { get; set; }
+        //[ForeignKey("GroupId")]
+        //public int GroupId { get; set; }
+
+        
+        //public virtual Group Group { get; set; }
+
+        public ICollection<GroupStudent> GroupStudent { get; set; }
     }
 }
+
 
 
 /*

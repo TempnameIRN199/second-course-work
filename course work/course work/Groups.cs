@@ -4,15 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace course_work
 {
-    internal class Groups
+    internal class Group
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(10)]
         public string Name { get; set; }
 
-        public virtual ICollection<GroupStudents> GroupStudents { get; set; }
+        public ICollection<GroupStudent> GroupStudent { get; set; }
     }
 }
 
