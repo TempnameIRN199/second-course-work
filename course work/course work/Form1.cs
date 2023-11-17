@@ -22,7 +22,7 @@ namespace course_work
         {
             using (hentuhoContext db = new hentuhoContext())
             {
-                Group groups = new Group { Name = "3-007" };
+                Group groups = new Group { Id = 1, Name = "3-007" };
                 db.Groups.Add(groups);
                 db.SaveChanges();
             }

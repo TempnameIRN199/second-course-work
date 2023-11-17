@@ -28,7 +28,6 @@ namespace course_work
         //[ForeignKey("GroupId")]
         //public int GroupId { get; set; }
 
-        
         //public virtual Group Group { get; set; }
 
         public ICollection<GroupStudent> GroupStudent { get; set; }

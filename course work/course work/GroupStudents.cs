@@ -13,11 +13,13 @@ namespace course_work
         [Key]
         public int Id { get; set; }
 
+        
         public int GroupId { get; set; }
 
         [ForeignKey("GroupId")]
         public virtual Group Group { get; set; }
 
+        
         public int StudentId { get; set; }
 
         [ForeignKey("StudentId")]

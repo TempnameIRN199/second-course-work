@@ -13,6 +13,9 @@ namespace course_work
     }
 }
 
+/*
+удалить это, и сделать перечислением enum 
+*/
 
 /*
 create table Grades (
