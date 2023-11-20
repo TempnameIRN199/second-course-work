@@ -23,16 +23,19 @@ namespace test_1
                 this.Text = "WeekDay";
 
                 Label label = new Label();
-                label.Text = "";
+                label.Text = "Week Day:";
+                label.Location = new Point(10, 10);
+                label.Size = new Size(100, 30);
+                this.Controls.Add(label);
 
                 TextBox txt = new TextBox();
-                txt.Location = new Point(10, 10);
+                txt.Location = new Point(10, 50);
                 txt.Size = new Size(100, 30);
                 this.Controls.Add(txt);
 
                 Button btn = new Button();
                 btn.Text = "Add";
-                btn.Location = new Point(10, 40);
+                btn.Location = new Point(10, 90);
                 btn.Size = new Size(100, 30);
                 btn.Click += btnAdd_Click;
                 this.Controls.Add(btn);
@@ -65,7 +68,16 @@ namespace test_1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Add");
+            using (testContext db = new testContext())
+            {
+                if (this.Text == "PageWeekDay")
+                {
+                    WeekDays weekDay = new WeekDays();
+                    weekDay.Name = this.Controls[1].Text;
+                    db.WeekDays.Add(weekDay);
+                    db.SaveChanges();
+                }
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
