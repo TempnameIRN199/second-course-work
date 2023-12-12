@@ -1,0 +1,28 @@
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\course project.exe.config
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\course project.exe
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\course project.pdb
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\EntityFramework.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Newtonsoft.Json.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\EntityFramework.xml
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Newtonsoft.Json.xml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.csproj.AssemblyReference.cache
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\MainWindow.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\App.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project_MarkupCompile.cache
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project_MarkupCompile.lref
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\MainWindow.baml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.g.resources
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course_project.Properties.Resources.resources
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.csproj.GenerateResource.cache
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.csproj.CoreCompileInputs.cache
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.csproj.CopyComplete
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.exe
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\course project.pdb
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\MainWindows\MainWindow1.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\AddWindow.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\EditWindow.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\MainWindows\MainWindow1.baml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\AddWindow.baml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\EditWindow.baml
