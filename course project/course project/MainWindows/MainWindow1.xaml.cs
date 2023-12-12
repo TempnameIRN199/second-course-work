@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using course_project.OtherWindows;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 
 namespace course_project.MainWindows
 {
@@ -114,12 +115,258 @@ namespace course_project.MainWindows
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (StudentPage.IsSelected)
+            {
+                if (StudentListView.SelectedItems != null)
+                {
+                    if (StudentListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть відділ для редагування");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            foreach (Student students in StudentListView.SelectedItems)
+                            {
+                                updStudent = db.Student.Find(students.Id);
+                            }
+                            if (updStudent == null)
+                            {
+                                MessageBox.Show("Не суй туди руки");
+                                return;
+                            }
+                            else
+                            {
+                                EditWindow windowEdit = new EditWindow("StudentEdit", typeof(Student), updStudent);
+                                windowEdit.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
+            else if (SubjectPage.IsSelected)
+            {
+                if (SubjectListView.SelectedItems != null)
+                {
+                    if (SubjectListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть відділ для редагування");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            foreach (Subject subjects in SubjectListView.SelectedItems)
+                            {
+                                updSubject = db.Subject.Find(subjects.Id);
+                            }
+                            if (updSubject == null)
+                            {
+                                MessageBox.Show("Не суй туди руки");
+                                return;
+                            }
+                            else
+                            {
+                                EditWindow windowEdit = new EditWindow("SubjectEdit", typeof(Subject), updStudent, updSubject);
+                                windowEdit.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            if (StudentPage.IsSelected)
+            {
+                if (StudentListView.SelectedItems != null)
+                {
+                    if (StudentListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть для видалення");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            for (int i = 0; i < StudentListView.SelectedItems.Count; i++)
+                            {
+                                Student students = StudentListView.SelectedItems[i] as Student;
+                                if (students != null)
+                                {
+                                    db.Student.Attach(students);
+                                    try
+                                    {
+                                        db.Student.Remove(students);
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show($"Не можна видалити цей елемент, оскільки він пов'язаний із сутністю. ex: {ex}");
+                                    }
+                                    finally
+                                    {
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (SubjectPage.IsSelected)
+            {
+                if (SubjectListView.SelectedItems != null)
+                {
+                    if (SubjectListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть для видалення");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            for (int i = 0; i < SubjectListView.SelectedItems.Count; i++)
+                            {
+                                Subject subjects = SubjectListView.SelectedItems[i] as Subject;
+                                if (subjects != null)
+                                {
+                                    db.Subject.Attach(subjects);
+                                    try
+                                    {
+                                        db.Subject.Remove(subjects);
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show($"Не можна видалити цей елемент, оскільки він пов'язаний із сутністю. ex: {ex}");
+                                    }
+                                    finally
+                                    {
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (TeacherPage.IsSelected)
+            {
+                if (TeacherListView.SelectedItems != null)
+                {
+                    if (TeacherListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть для видалення");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            for (int i = 0; i < TeacherListView.SelectedItems.Count; i++)
+                            {
+                                Teacher teachers = TeacherListView.SelectedItems[i] as Teacher;
+                                if (teachers != null)
+                                {
+                                    db.Teacher.Attach(teachers);
+                                    try
+                                    {
+                                        db.Teacher.Remove(teachers);
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show($"Не можна видалити цей елемент, оскільки він пов'язаний із сутністю. ex: {ex}");
+                                    }
+                                    finally
+                                    {
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (TypeSubjectPage.IsSelected)
+            {
+                if (TypeSubjectListView.SelectedItems != null)
+                {
+                    if (TypeSubjectListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть для видалення");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            for (int i = 0; i < TypeSubjectListView.SelectedItems.Count; i++)
+                            {
+                                TypeSubject typeSubjects = TypeSubjectListView.SelectedItems[i] as TypeSubject;
+                                if (typeSubjects != null)
+                                {
+                                    db.TypeSubject.Attach(typeSubjects);
+                                    try
+                                    {
+                                        db.TypeSubject.Remove(typeSubjects);
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show($"Не можна видалити цей елемент, оскільки він пов'язаний із сутністю. ex: {ex}");
+                                    }
+                                    finally
+                                    {
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (AttendancePage.IsSelected)
+            {
+                if (AttendanceListView.SelectedItems != null)
+                {
+                    if (AttendanceListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Виберіть для видалення");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            for (int i = 0; i < AttendanceListView.SelectedItems.Count; i++)
+                            {
+                                Attendance attendances = AttendanceListView.SelectedItems[i] as Attendance;
+                                if (attendances != null)
+                                {
+                                    db.Attendance.Attach(attendances);
+                                    try
+                                    {
+                                        db.Attendance.Remove(attendances);
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show($"Не можна видалити цей елемент, оскільки він пов'язаний із сутністю. ex: {ex}");
+                                    }
+                                    finally
+                                    {
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Window_Loaded();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
