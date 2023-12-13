@@ -343,9 +343,33 @@ namespace course_project.OtherWindows
                 }
                 else if (this.Title == "Редагування предмета")
                 {
+                    updSubject1.Name = ((TextBox)grid.Children[2]).Text;
+                    updSubject1.Semester = Convert.ToInt32(((TextBox)grid.Children[4]).Text);
+                    updSubject1.TotalHours = Convert.ToDecimal(((TextBox)grid.Children[6]).Text);
+
+                    var subject = db.Subject.Where(x => x.Id == updSubject1.Id).FirstOrDefault();
+                    subject.Name = updSubject1.Name;
+                    subject.Semester = updSubject1.Semester;
+                    subject.TotalHours = updSubject1.TotalHours;
+
+                    db.Entry(subject).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Дані успішно оновлені!");
+                    this.Close();
                 }
                 else if (this.Title == "Редагування викладача")
                 {
+                    updTeacher1.Surname = ((TextBox)grid.Children[2]).Text;
+                    updTeacher1.Name = ((TextBox)grid.Children[4]).Text;
+
+                    var teacher = db.Teacher.Where(x => x.Id == updTeacher1.Id).FirstOrDefault();
+                    teacher.Surname = updTeacher1.Surname;
+                    teacher.Name = updTeacher1.Name;
+
+                    db.Entry(teacher).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Дані успішно оновлені!");
+                    this.Close();
                 }
                 else if (this.Title == "Редагування типу предмета")
                 {

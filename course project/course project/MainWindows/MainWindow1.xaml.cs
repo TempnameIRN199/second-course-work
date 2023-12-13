@@ -37,6 +37,7 @@ namespace course_project.MainWindows
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+
             using (NintendoContext db = new NintendoContext())
             {
                 StudentListView.ItemsSource = null;
@@ -121,7 +122,7 @@ namespace course_project.MainWindows
                 {
                     if (StudentListView.SelectedItems.Count == 0)
                     {
-                        MessageBox.Show("Виберіть відділ для редагування");
+                        MessageBox.Show("Ну і що ти тут забув?");
                         return;
                     }
                     else
@@ -152,7 +153,7 @@ namespace course_project.MainWindows
                 {
                     if (SubjectListView.SelectedItems.Count == 0)
                     {
-                        MessageBox.Show("Виберіть відділ для редагування");
+                        MessageBox.Show("Ну і що ти тут забув?");
                         return;
                     }
                     else
@@ -177,6 +178,73 @@ namespace course_project.MainWindows
                     }
                 }
             }
+            else if (TeacherPage.IsSelected)
+            {
+                if (TeacherListView.SelectedItems != null)
+                {
+                    if (TeacherListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Ну і що ти тут забув?");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            foreach (Teacher teachers in TeacherListView.SelectedItems)
+                            {
+                                updTeacher = db.Teacher.Find(teachers.Id);
+                            }
+                            if (updTeacher == null)
+                            {
+                                MessageBox.Show("Не суй туди руки");
+                                return;
+                            }
+                            else
+                            {
+                                EditWindow windowEdit = new EditWindow("TeacherEdit", typeof(Teacher), updStudent, updSubject, updTeacher);
+                                windowEdit.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
+            else if (TypeSubjectPage.IsSelected)
+            {
+                if (TypeSubjectListView.SelectedItems != null)
+                {
+                    if (TypeSubjectListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Ну і що ти тут забув?");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            foreach (TypeSubject typeSubjects in TypeSubjectListView.SelectedItems)
+                            {
+                               updTypeSubject = db.TypeSubject.Find(typeSubjects.Id);
+                            }
+                            if (updTypeSubject == null)
+                            {
+                                MessageBox.Show("Не суй туди руки");
+                                return;
+                            }
+                            else
+                            {
+                                EditWindow windowEdit = new EditWindow("TypeSubjectEdit", typeof(TypeSubject), updStudent, updSubject, updTeacher, updTypeSubject);
+                                windowEdit.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ну і що ти тут забув?");
+            }
+            Window_Loaded();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -335,7 +403,7 @@ namespace course_project.MainWindows
                 {
                     if (AttendanceListView.SelectedItems.Count == 0)
                     {
-                        MessageBox.Show("Виберіть для видалення");
+                        MessageBox.Show("Ну і що ти тут забув?");
                         return;
                     }
                     else
