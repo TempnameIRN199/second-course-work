@@ -240,6 +240,37 @@ namespace course_project.MainWindows
                     }
                 }
             }
+            else if (AttendancePage.IsSelected)
+            {
+                if (AttendanceListView.SelectedItems != null)
+                {
+                    if (AttendanceListView.SelectedItems.Count == 0)
+                    {
+                        MessageBox.Show("Ну і що ти тут забув?");
+                        return;
+                    }
+                    else
+                    {
+                        using (NintendoContext db = new NintendoContext())
+                        {
+                            foreach (Attendance attendances in AttendanceListView.SelectedItems)
+                            {
+                                updAttendance = db.Attendance.Find(attendances.Id);
+                            }
+                            if (updAttendance == null)
+                            {
+                                MessageBox.Show("Не суй туди руки");
+                                return;
+                            }
+                            else
+                            {
+                                EditWindow windowEdit = new EditWindow("AttendanceEdit", typeof(Attendance), updStudent, updSubject, updTeacher, updTypeSubject, updAttendance);
+                                windowEdit.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
             else
             {
                 MessageBox.Show("Ну і що ти тут забув?");
@@ -440,6 +471,16 @@ namespace course_project.MainWindows
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessWindow processWindow = new ProcessWindow();
+            processWindow.Show();
+            if (processWindow.IsActive == false)
+            {
+                Window_Loaded();
+            }
         }
     }
 }

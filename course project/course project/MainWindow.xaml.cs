@@ -37,18 +37,6 @@ namespace course_project
                 db.TypeSubject.Load();
                 db.Attendance.Load();
             }
-
-            // еще больше ускорить загрузку данных
-            using (NintendoContext db = new NintendoContext())
-            {
-                db.Configuration.AutoDetectChangesEnabled = false; // отключаем отслеживание изменений
-                db.Configuration.ValidateOnSaveEnabled = false; // отключаем валидацию при сохранении
-                db.Configuration.LazyLoadingEnabled = false; // отключаем ленивую загрузку
-                db.Configuration.ProxyCreationEnabled = false; // отключаем создание прокси-объектов
-                db.Configuration.UseDatabaseNullSemantics = false; // отключаем использование базовой семантики null
-                db.Configuration.EnsureTransactionsForFunctionsAndCommands = false; // отключаем транзакции для команд и функций
-                db.Configuration.UseDatabaseNullSemantics = false; // отключаем использование базовой семантики null
-            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

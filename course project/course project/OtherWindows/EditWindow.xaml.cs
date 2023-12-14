@@ -319,6 +319,30 @@ namespace course_project.OtherWindows
                 datePicker.SelectedDate = updAttendance1.Date;
                 textBox4.Text = updAttendance1.NumberLesson.ToString();
             }
+            else if (title == "InfoEdit" && type == typeof(Attendance))
+            {
+                this.Title = "Студент";
+
+                Label label2 = new Label();
+                label2.Content = "Skip: ";
+                label2.Margin = new Thickness(10);
+                Grid.SetRow(label2, 2);
+
+                ComboBox comboBox = new ComboBox();
+                comboBox.Margin = new Thickness(10, 10, -40, 10);
+                comboBox.Width = 200;
+                Grid.SetRow(comboBox, 2);
+
+                grid.Children.Add(label2);
+                grid.Children.Add(comboBox);
+
+                foreach (var item in Enum.GetValues(typeof(DB.EnumSkip)))
+                {
+                    comboBox.Items.Add(item);
+                }
+
+                comboBox.SelectedItem = updAttendance1.Skip;
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -373,9 +397,53 @@ namespace course_project.OtherWindows
                 }
                 else if (this.Title == "Редагування типу предмета")
                 {
+                    updTypeSubject1.SubjectId = Convert.ToInt32(((TextBox)grid.Children[2]).Text);
+                    updTypeSubject1.TeacherId = Convert.ToInt32(((TextBox)grid.Children[4]).Text);
+                    updTypeSubject1.Type = (DB.EnumType)((ComboBox)grid.Children[6]).SelectedItem;
+                    updTypeSubject1.Hours = Convert.ToDecimal(((TextBox)grid.Children[8]).Text);
+
+                    var typeSubject = db.TypeSubject.Where(x => x.Id == updTypeSubject1.Id).FirstOrDefault();
+                    typeSubject.SubjectId = updTypeSubject1.SubjectId;
+                    typeSubject.TeacherId = updTypeSubject1.TeacherId;
+                    typeSubject.Type = updTypeSubject1.Type;
+                    typeSubject.Hours = updTypeSubject1.Hours;
+
+                    db.Entry(typeSubject).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Дані успішно оновлені!");
+                    this.Close();
                 }
                 else if (this.Title == "Редагування відвідування")
                 {
+                    updAttendance1.TypeSubjectId = Convert.ToInt32(((TextBox)grid.Children[2]).Text);
+                    updAttendance1.StudentId = Convert.ToInt32(((TextBox)grid.Children[4]).Text);
+                    updAttendance1.Skip = (DB.EnumSkip)((ComboBox)grid.Children[6]).SelectedItem;
+                    updAttendance1.Date = ((DatePicker)grid.Children[8]).SelectedDate.Value;
+                    updAttendance1.NumberLesson = Convert.ToInt32(((TextBox)grid.Children[10]).Text);
+
+                    var attendance = db.Attendance.Where(x => x.Id == updAttendance1.Id).FirstOrDefault();
+                    attendance.TypeSubjectId = updAttendance1.TypeSubjectId;
+                    attendance.StudentId = updAttendance1.StudentId;
+                    attendance.Skip = updAttendance1.Skip;
+                    attendance.Date = updAttendance1.Date;
+                    attendance.NumberLesson = updAttendance1.NumberLesson;
+
+                    db.Entry(attendance).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Дані успішно оновлені!");
+                    this.Close();
+                }
+                else if (this.Title == "Студент")
+                {
+                    updAttendance1.Skip = (DB.EnumSkip)((ComboBox)grid.Children[2]).SelectedItem;
+
+                    var attendance = db.Attendance.Where(x => x.Id == updAttendance1.Id).FirstOrDefault();
+                    attendance.Skip = updAttendance1.Skip;
+
+                    db.Entry(attendance).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Дані успішно оновлені!");
+                    this.Close();
                 }
             }
         }

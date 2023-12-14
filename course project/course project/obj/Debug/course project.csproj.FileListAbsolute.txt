@@ -26,3 +26,10 @@ E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug
 E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\MainWindows\MainWindow1.baml
 E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\AddWindow.baml
 E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\EditWindow.baml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\ProcessWindow.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\ProcessWindow.baml
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\envdte.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Microsoft.VisualStudio.Interop.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\envdte.xml
+E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Microsoft.VisualStudio.Interop.xml
