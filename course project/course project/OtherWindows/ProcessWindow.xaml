@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ListView Name="AttendanceListView" ItemsSource="{Binding Attendance}" MouseDoubleClick="AttendanceListView_MouseDoubleClick">
+        <ListView x:Name="AttendanceListView" ItemsSource="{Binding Attendance}" MouseDoubleClick="AttendanceListView_MouseDoubleClick">
             <ListView.View>
                 <GridView>
 					<GridViewColumn Header="Id" Width="1" DisplayMemberBinding="{Binding Id}"/>
@@ -26,7 +26,8 @@
         </ListView>
 		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
 			<Button Name="SaveButton" Width="100" Content="Save" Click="SaveButton_Click" Margin="5"/>
-			<Button Name="JSONButton" Width="100" Content="Cancel" Click="JSONButton_Click" Margin="5"/>
+            <Button Name="JSONButton" Width="100" Content="JSON" Click="JSONButton_Click" Margin="5"/>
+            <Button Name="CloseButton" Width="100" Content="Close" Click="Close_Click" Margin="5"/>
 		</StackPanel>
     </Grid>
 </Window>

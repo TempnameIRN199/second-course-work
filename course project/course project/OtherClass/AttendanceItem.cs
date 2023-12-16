@@ -24,20 +24,6 @@ namespace OtherClass
             }
         }
 
-        //private ObservableCollection<AttendanceItem> _attendance;
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //public ObservableCollection<AttendanceItem> Attendance
-        //{
-        //    get { return _attendance; }
-        //    set
-        //    {
-        //        _attendance = value;
-        //        OnPropertyChanged("Attendance");
-        //    }
-        //}
-
         protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

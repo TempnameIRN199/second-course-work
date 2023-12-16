@@ -475,12 +475,10 @@ namespace course_project.MainWindows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ProcessWindow processWindow = new ProcessWindow();
-            processWindow.Show();
-            if (processWindow.IsActive == false)
-            {
-                Window_Loaded();
-            }
+            CheckWindow checkWindow = new CheckWindow();
+            checkWindow.LoadDataIntoComboBoxes();
+            checkWindow.Show();
+            this.Close();
         }
     }
 }

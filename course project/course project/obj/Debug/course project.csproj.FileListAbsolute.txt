@@ -33,3 +33,5 @@ E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug
 E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
 E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\envdte.xml
 E:\Project VS\C#\course work\course-work\course project\course project\bin\Debug\Microsoft.VisualStudio.Interop.xml
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\CheckWindow.g.cs
+E:\Project VS\C#\course work\course-work\course project\course project\obj\Debug\OtherWindows\CheckWindow.baml
