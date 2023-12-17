@@ -20,12 +20,6 @@ namespace course_project.OtherWindows
     /// </summary>
     public partial class CheckWindow : Window
     {
-        //Student updStudent1 = new Student();
-        //Subject updSubject1 = new Subject();
-        //Teacher updTeacher1 = new Teacher();
-        //TypeSubject updTypeSubject1 = new TypeSubject();
-        //Attendance updAttendance1 = new Attendance();
-
         public CheckWindow()
         {
             InitializeComponent();
@@ -50,7 +44,6 @@ namespace course_project.OtherWindows
         {
             using (NintendoContext db = new NintendoContext())
             {
-                // взять из ComboBox выбранные значения и передать их в ProcessWindow
                 var teacherName = TeacherComboBox.SelectedItem.ToString();
                 var subjectName = SubjectComboBox.SelectedItem.ToString();
 
@@ -59,9 +52,17 @@ namespace course_project.OtherWindows
 
                 var typeSubject = db.TypeSubject.FirstOrDefault(ts => ts.TeacherId == teacher.Id && ts.SubjectId == subject.Id);
 
-                var processWindow = new ProcessWindow(null, subject, teacher, null, null);
+                if (typeSubject != null)
+                {
+                    var processWindow = new ProcessWindow(null, subject, teacher, null, null);
 
-                processWindow.Show();
+                    processWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Не суй сюди руки!");
+                    return;
+                }
 
                 this.Close();
             }

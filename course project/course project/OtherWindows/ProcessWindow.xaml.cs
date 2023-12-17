@@ -88,35 +88,6 @@ namespace course_project.OtherWindows
             }
         }
 
-        /*public void Load_Windows()
-        {
-            using (NintendoContext db = new NintendoContext())
-            {
-                var query = from attendance in db.Attendance
-                            join typeSubject in db.TypeSubject on attendance.TypeSubjectId equals typeSubject.Id
-                            join student in db.Student on attendance.StudentId equals student.Id
-                            join subject in db.Subject on typeSubject.SubjectId equals subject.Id
-                            select new AttendanceItem
-                            {
-                                Id = attendance.Id,
-                                StudentName = student.Surname + " " + student.Name,
-                                SubjectName = subject.Name,
-                                Skip11 = attendance.Skip.ToString()
-                            };
-
-                var viewModel = new AttendanceViewModel();
-
-                viewModel.Attendance.Clear();
-
-                foreach (var item in query)
-                {
-                    viewModel.Attendance.Add(item);
-                }
-
-                this.DataContext = viewModel;
-            }
-        }*/
-
         private void AttendanceListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (AttendanceListView.SelectedItems != null)
@@ -150,11 +121,6 @@ namespace course_project.OtherWindows
             }
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void JSONButton_Click(object sender, RoutedEventArgs e)
         {
             using (NintendoContext db = new NintendoContext())
@@ -171,6 +137,11 @@ namespace course_project.OtherWindows
                                 Skip11 = attendance.Skip.ToString()
                             };
 
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
                 var viewModel = new AttendanceViewModel();
 
                 viewModel.Attendance.Clear();
@@ -180,34 +151,26 @@ namespace course_project.OtherWindows
                     viewModel.Attendance.Add(item);
                 }
 
-                foreach (var item in viewModel.Attendance)
+                string filename = System.IO.Path.Combine(folderPath, $"day-{fileCount}.json");
+                bool fileExists = File.Exists(filename);
+                while (fileExists)
                 {
-                    string filename = System.IO.Path.Combine(folderPath, $"day-{fileCount}.json");
-                    bool fileExists = File.Exists(filename);
-                    while (File.Exists(filename))
-                    {
-                        fileCount++;
-                        filename = System.IO.Path.Combine(folderPath, $"day-{fileCount}.json");
-                        fileExists = File.Exists(filename);
-                    }
-                    string json = JsonConvert.SerializeObject(item, Formatting.Indented);
-                    File.WriteAllText(filename, json);
-                    MessageBox.Show("Файл збережено");
                     fileCount++;
+                    filename = System.IO.Path.Combine(folderPath, $"day-{fileCount}.json");
+                    fileExists = File.Exists(filename);
                 }
+
+                string json = JsonConvert.SerializeObject(viewModel.Attendance, Formatting.Indented);
+                File.WriteAllText(filename, json);
+                MessageBox.Show("Файл збережено");
+                fileCount++;
             }
-
-            MainWindow1 mainWindow1 = new MainWindow1();
-            mainWindow1.Show();
-
-            this.Close();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             MainWindow1 mainWindow1 = new MainWindow1();
             mainWindow1.Show();
-
             this.Close();
         }
     }

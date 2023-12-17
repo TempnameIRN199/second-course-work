@@ -470,6 +470,8 @@ namespace course_project.MainWindows
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 

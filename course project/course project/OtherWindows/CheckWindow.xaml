@@ -25,7 +25,7 @@
 
         </Grid>
         
-        <Button x:Name="button" Content="Подтвердить" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Grid.Row="1" Click="button_Click"/>
+        <Button x:Name="button" Content="Підтвердити" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Grid.Row="1" Click="button_Click"/>
 
     </Grid>
 </Window>

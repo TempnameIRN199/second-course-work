@@ -24,8 +24,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-			<Button Name="SaveButton" Width="100" Content="Save" Click="SaveButton_Click" Margin="5"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Button Name="JSONButton" Width="100" Content="JSON" Click="JSONButton_Click" Margin="5"/>
             <Button Name="CloseButton" Width="100" Content="Close" Click="Close_Click" Margin="5"/>
 		</StackPanel>

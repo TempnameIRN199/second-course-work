@@ -41,18 +41,16 @@ namespace course_project
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (button.Content.ToString() == "Звичайна")
-            {
-                MainWindow1 mainWindow1 = new MainWindow1();
-                mainWindow1.Show();
-                this.Close();
-            }
-            else
-            {
-                //MainWindow2 mainWindow2 = new MainWindow2();
-                //mainWindow2.Show();
-                //this.Close();
-            }
+            MainWindow1 mainWindow1 = new MainWindow1();
+            mainWindow1.Show();
+            this.Close();
+        }
+
+        private void buttonMemasiki_Click(object sender, RoutedEventArgs e)
+        {
+            ConvertWindow convertWindow = new ConvertWindow();
+            convertWindow.Show();
+            this.Close();
         }
     }
 }
