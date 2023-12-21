@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "StudentName": "Юзбеков Віктор",
+    "SubjectName": "Об‘єктно-орієнтоване програмування",
+    "Skip11": "Present"
+  },
+  {
+    "Id": 2,
+    "StudentName": "Фомін Максим",
+    "SubjectName": "Об‘єктно-орієнтоване програмування",
+    "Skip11": "Excused"
+  },
+  {
+    "Id": 3,
+    "StudentName": "Колісніченко Кирило",
+    "SubjectName": "Об‘єктно-орієнтоване програмування",
+    "Skip11": "Present"
+  },
+  {
+    "Id": 4,
+    "StudentName": "Юзбеков Віктор",
+    "SubjectName": "Бази даних",
+    "Skip11": "Present"
+  },
+  {
+    "Id": 5,
+    "StudentName": "Фомін Максим",
+    "SubjectName": "Бази даних",
+    "Skip11": "Late"
+  },
+  {
+    "Id": 6,
+    "StudentName": "Колісніченко Кирило",
+    "SubjectName": "Бази даних",
+    "Skip11": "Present"
+  }
+]

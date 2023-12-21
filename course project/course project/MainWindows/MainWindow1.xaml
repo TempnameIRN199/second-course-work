@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:course_project.MainWindows"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow1" Height="450" Width="800">
+        Title="Звичайна" Height="450" Width="800">
     <Grid Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -86,14 +86,14 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button Content="Add" Click="btnAdd_Click" Margin="5" Width="100"/>
-                <Button Content="Edit" Click="btnEdit_Click" Margin="5" Width="100"/>
-                <Button Content="Delete" Click="btnDelete_Click" Margin="5" Width="100"/>
+                <Button Content="Додати" Click="btnAdd_Click" Margin="5" Width="100"/>
+                <Button Content="Редагувати" Click="btnEdit_Click" Margin="5" Width="100"/>
+                <Button Content="Видалити" Click="btnDelete_Click" Margin="5" Width="100"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="Soon" Margin="5" Width="100" Click="Button_Click"/>
-                <Button Content="Exit" Click="btnClose_Click" Margin="5" Width="100"/>
+                <Button Content="Вивести " Margin="5" Width="100" Click="Button_Click"/>
+                <Button Content="Закрити" Click="btnClose_Click" Margin="5" Width="100"/>
             </StackPanel>
         </Grid>
         

@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Save" Name="btnSave" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"
+        <Button Content="Зберегти" Name="btnSave" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"
             Margin="0,10,0,10" Click="btnSave_Click"/>
     </Grid>
 </Window>

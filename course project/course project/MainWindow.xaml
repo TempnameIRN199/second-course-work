@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:course_project"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="300" Width="300">
+        Title="Головне меню" Height="300" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -18,7 +18,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="button1" Content="Приколяхи усякі" Width="200" Height="60" Click="buttonMemasiki_Click"/>
+        <Button x:Name="button1" Content="Зчитування даних" Width="200" Height="60" Click="buttonMemasiki_Click"/>
         </StackPanel>
 
     </Grid>
